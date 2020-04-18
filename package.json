@@ -1,0 +1,33 @@
+{
+  "name": "openemp-api-configurator",
+  "version": "0.0.1",
+  "description": "OpenEMP Service to provide configuration resources",
+  "private": true,
+  "scripts": {
+    "start": "node ./app.js",
+    "test": "mocha --exit",
+    "coverage": "nyc npm run test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openemp/openemp-api-configurator.git"
+  },
+  "dependencies": {
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "fs": "0.0.1-security",
+    "glob": "^7.1.6",
+    "morgan": "~1.9.1",
+    "node-sass-middleware": "0.11.0",
+    "properties-reader": "^2.0.0",
+    "test": "^0.6.0"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^7.1.1",
+    "nyc": "^15.0.1",
+    "supertest": "^4.0.2"
+  }
+}
