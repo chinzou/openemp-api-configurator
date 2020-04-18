@@ -1,0 +1,11 @@
+{
+  "names": [
+    "name1",
+    "name2"
+  ],
+  "version": "1",
+  "details": {
+    "description": "more details in the test",
+    "link": "https://docs.openemp.org/"
+  }
+}
