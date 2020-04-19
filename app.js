@@ -1,63 +1,27 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
 const properties = require('./src/utils/properties')
-const app = require('./src/routes/configurator');
+const app = require('./src/services/configurator');
 const debug = require('debug')('openemp-api-configurator:server');
 const http = require('http');
 
-/**
- * Get port from environment and store in Express.
- */
-
-const port = normalizePort(properties.port);
-app.set('port', port);
+const port = parseInt(properties.port, 10);
 
 /**
  * Create HTTP server.
  */
-
 const server = http.createServer(app);
 
-/**
- * Listen on provided port, on all network interfaces.
- */
+server.listen( port, (error, response) =>{
+    console.log('Listening on port ' + server.address().port);
+});
 
-server.listen(port);
 server.on('error', onError);
 server.on('listening', onListening);
 
-/**
- * Normalize a port into a number, string, or false.
- */
-
-function normalizePort(val) {
-    let port = parseInt(val, 10);
-
-    if (isNaN(port)) {
-        // named pipe
-        return val;
-    }
-
-    if (port >= 0) {
-        // port number
-        return port;
-    }
-
-    return false;
-}
-
-/**
- * Event listener for HTTP server "error" event.
- */
 
 function onError(error) {
-    if (error.syscall !== 'listen') {
-        throw error;
-    }
-
+    if (error.syscall !== 'listen') throw error;
     var bind = typeof port === 'string'
         ? 'Pipe ' + port
         : 'Port ' + port;
