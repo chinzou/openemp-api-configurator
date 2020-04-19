@@ -5,8 +5,9 @@ const properties = propertiesReader(path.join('resources/', `dev.properties`))
 
 module.exports = {
     path: process.env.CONFIG_PATH || properties.get('config.path'),
-    port: properties.get('server.port') || '3001',
+    port: process.env.SERVER_PORT || properties.get('server.port') || '3001',
     debug: 'dev',
     user: (process.env.CONFIG_USER || properties.get('server.user') || null),
     password: (process.env.CONFIG_PASSWORD || properties.get('server.password') || null),
+    supportedFileType: ['properties'] // TODO: Add support for 'json' and 'xml'
 }
