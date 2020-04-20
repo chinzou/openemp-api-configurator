@@ -12,7 +12,7 @@ cd openemp-api-configurator
 npm install 
 npm start
 ```
-configurator then will serve properties and configurations from the [/config](spec/test/config) folder, please override it's content to provide your own.
+configurator then will serve properties and configurations from the [/config](test/config) folder, please override it's content to provide your own.
 
 ### Setup
 
